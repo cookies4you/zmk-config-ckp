@@ -6,7 +6,7 @@ jobs:
   build:
     runs-on: ubuntu-latest
     container:
-      image: zmkfirmware/zmk-build-arm:stable
+      image: zmkfirmware/zmk-build-arm:2.5
     name: Build
     steps:
       - name: Checkout
@@ -27,14 +27,6 @@ jobs:
             ${{ runner.os }}-build-${{ env.cache-name }}-
             ${{ runner.os }}-build-
             ${{ runner.os }}-
-      - name: Install yaml2json
-        run: python3 -m pip install remarshal
-      - id: set-matrix
-        name: Fetch Build Matrix
-        run: |
-          matrix=$(yaml2json build.yaml | jq -c .)
-          yaml2json build.yaml
-          echo "::set-output name=matrix::${matrix}"
       - name: West Init
         run: west init -l config
       - name: West Update
@@ -42,7 +34,7 @@ jobs:
       - name: West Zephyr export
         run: west zephyr-export
       - name: West Build (bt60)
-        run: west build -s zmk/app -b bt60 -- -DZMK_CONFIG=${GITHUB_WORKSPACE}/config
+        run: west build -s zmk/app -b bt60 -- -DZMK_CONFIG="${GITHUB_WORKSPACE}/config"
       - name: bt60 DTS File
         if: ${{ always() }}
         run: cat -n build/zephyr/bt60.dts.pre.tmp
