@@ -13,6 +13,7 @@
 #include <dt-bindings/zmk/ext_power.h>
 
 // Default
+/*
 / {
 	keymap {
 		compatible = "zmk,keymap";
