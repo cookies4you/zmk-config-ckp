@@ -56,17 +56,17 @@
 				&kp LSHFT &none &kp Z  &kp X  &kp C  &kp V  &kp B  &kp N  &kp M  &kp COMMA &kp DOT &kp FSLH   &kp RSHFT &none &kp UP &kp PG_DN
 				&kp LCTRL &kp LGUI &kp LALT            &kp SPACE                          &kp RALT  &mo 1 &kp RCTRL &kp LEFT &kp DOWN &kp RIGHT
 			>;
-			sensor-bindings = <&inc_dec_kp Q W  &inc_dec_kp E R  &inc_dec_kp T Y>;
+			sensor-bindings = <&inc_dec_kp Q W  &inc_dec_kp E R  &inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
 		raise {
 			bindings = <
 				&reset &kp F1 &kp F2 &kp F3 &kp F4 &kp F5 &kp F6 &kp F7 &kp  F8   &kp  F9   &kp F10  &kp F11 &kp F12 &kp SLCK &kp PAUSE_BREAK &bootloader
-				&l_tog &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &trans &trans &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF  &rgb_ug RGB_BRD  &rgb_ug RGB_BRI  &rgb_ug RGB_TOG  &trans  &kp INS
+				&l_tog &bt BT_SEL 0  &bt BT_SEL 1  &bt BT_SEL 2  &bt BT_CLR  &trans &trans &trans &rgb_ug RGB_SPD  &rgb_ug RGB_SPI  &rgb_ug RGB_EFF  &l_r &l_f  &trans  &kp INS
 				&reset &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans   &trans &kp HOME
 				&trans &none &trans &trans &trans &trans &trans &trans &trans &trans &trans &trans  &trans &none &trans &kp END
 				&trans &trans  &trans              &trans                            &trans   &trans   &trans &trans &trans &trans
 			>;
-			sensor-bindings = <&inc_dec_kp Q W  &inc_dec_kp E R  &inc_dec_kp T Y>;
+			sensor-bindings = <&inc_dec_kp Q W  &inc_dec_kp E R  &inc_dec_kp C_VOL_DN C_VOL_UP>;
 		};
 	};
 };
